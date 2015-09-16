@@ -67,8 +67,8 @@ class UsersController < ApplicationController
   end
 
   def test
-    # HelperMailer.send_help_request_email().deliver
-    # HelperMailer.send_help_request_text().deliver
+    HelperMailer.send_help_request_email().deliver
+    HelperMailer.send_help_request_text().deliver
     respond_to do |format|
       format.html { 
         flash[:success] = 'Notification sent successfully!'
