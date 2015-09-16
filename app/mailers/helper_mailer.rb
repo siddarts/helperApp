@@ -3,7 +3,7 @@ class HelperMailer < ActionMailer::Base
 
   def send_help_request_email()
     # mail(to: 'siddarts@andrew.cmu.edu', subject: 'Python Help Request')
-    mail(to: 'aborie@andrew.cmu.edu', subject: 'Python Help Request')
+    mail(to: 'alicemcborie@gmail.com', subject: 'Python Help Request')
   end
 
   def send_help_request_text()
