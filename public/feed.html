@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="icon" href="http://i452.photobucket.com/albums/qq248/lostvegasvip/Burning-letter-H-psd26802-2.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Main CSS page -->
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+
+    <title>Helper</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-faded">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/assets/logo.png" alt="Helper" style="height:30px;"></a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="profile.html"><i class="ionicons ion-person"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="feed.html"><i class="ionicons ion-android-favorite-outline"></i> Help Feed</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="help_others.html"><i class="ionicons ion-help-buoy"></i> Help Others <span class="label label-pill label-default" style="font-weight: normal;">4</span></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <!-- Profile Info -->
+            <div class="col-sm-3">
+                <!-- Quick info -->
+                <div class="card">
+                    <img class="card-img-top" src="/assets/user.png" alt="Profile Picture" style="width:100%;">
+                    <div class="card-block">
+                        <h4 class="card-title">Alice Borie</h4>
+                        <p class="card-text">Senior, Carnegie Mellon University</p>
+                    </div>
+                </div>
+                <!-- Points -->
+                <div class="card">
+                    <div class="card-block">
+                        <h6>Help Credits:</h6>
+                        <div class="pull-left">
+                            2 hours 30 mins
+                        </div>
+                        <div class="pull-right">
+                            <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title">Knows</h6>
+                        <!-- Skills Group -->
+                        <p class="card-text" id="skills_group">
+                            <span class="label label-pill label-primary">Python</span>
+                            <span class="label label-pill label-primary">Ruby</span>
+                            <span class="label label-pill label-primary">Django</span>
+                            <span class="label label-pill label-primary">Ruby on Rails</span>
+                            <span class="label label-pill label-info">Driving</span>
+                            <span class="label label-pill label-warning">French</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Feed -->
+            <div class="col-sm-9">
+                <div class="above-card-header">
+                    <h4 class="card-title">Helper in your network:</h4>
+                </div>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Python</strong> 
+                            <div class="pull-right">
+                                   + 60 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> needs help with <strong>moving</strong>
+                            <div class="pull-right">
+                                   - 90 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Ruby on Rails</strong> 
+                            <div class="pull-right">
+                                   + 50 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sid Sivakumar</strong> needs help with <strong>going grocery shopping</strong> 
+                            <div class="pull-right">
+                                   - 20 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Leo Ying</strong> needs help with <strong>driving</strong>
+                            <div class="pull-right">
+                                   - 40 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Python</strong> 
+                            <div class="pull-right">
+                                   + 60 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> needs help with <strong>moving</strong>
+                            <div class="pull-right">
+                                   - 90 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Ruby on Rails</strong> 
+                            <div class="pull-right">
+                                   + 50 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sid Sivakumar</strong> needs help with <strong>going grocery shopping</strong> 
+                            <div class="pull-right">
+                                   - 20 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Leo Ying</strong> needs help with <strong>driving</strong>
+                            <div class="pull-right">
+                                   - 40 minutes
+                                </div>
+                        </li> 
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Python</strong> 
+                            <div class="pull-right">
+                                   + 60 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> needs help with <strong>moving</strong>
+                            <div class="pull-right">
+                                   - 90 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alice Borie</strong> helped <strong>Leo Ying</strong> with <strong>Ruby on Rails</strong> 
+                            <div class="pull-right">
+                                   + 50 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sid Sivakumar</strong> needs help with <strong>going grocery shopping</strong> 
+                            <div class="pull-right">
+                                   - 20 minutes
+                                </div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Leo Ying</strong> needs help with <strong>driving</strong>
+                            <div class="pull-right">
+                                   - 40 minutes
+                                </div>
+                        </li>                     
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  </body>
+</html>

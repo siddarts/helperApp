@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <link rel="icon" href="http://i452.photobucket.com/albums/qq248/lostvegasvip/Burning-letter-H-psd26802-2.png">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+        <!-- Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+        <!-- Main CSS page -->
+        <link rel="stylesheet" type="text/css" href="/assets/main.css">
+
+        <script src="/assets/helper.js"></script>
+
+        <title>Helper</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-light bg-faded">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="/assets/logo.png" alt="Helper" style="height:30px;"></a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="profile.html"><i class="ionicons ion-person"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="feed.html"><i class="ionicons ion-android-favorite-outline"></i> Help Feed</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="help_others.html"><i class="ionicons ion-help-buoy"></i> Help Others <span class="label label-pill label-default" style="font-weight: normal;">4</span></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="nav-item">
+                      <a class="nav-link" href="login.html">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <!-- Profile Info -->
+                <div class="col-sm-3">
+                    <!-- Quick info -->
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/user.png" alt="Profile Picture" style="width:100%;">
+                        <div class="card-block">
+                            <h4 class="card-title">Alice Borie</h4>
+                            <p class="card-text">Senior, Carnegie Mellon University</p>
+                        </div>
+                    </div>
+                    <!-- Points -->
+                    <div class="card">
+                        <div class="card-block">
+                            <h6>Help Credits:</h6>
+                            <div class="pull-left">
+                                2 hours 30 mins
+                            </div>
+                            <div class="pull-right">
+                                <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="card">
+                        <div class="card-block">
+                            <h6 class="card-title">Knows</h6>
+                            <!-- Skills Group -->
+                            <p class="card-text" id="skills_group">
+                                <span class="label label-pill label-primary">Python</span>
+                                <span class="label label-pill label-primary">Ruby</span>
+                                <span class="label label-pill label-primary">Django</span>
+                                <span class="label label-pill label-primary">Ruby on Rails</span>
+                                <span class="label label-pill label-info">Driving</span>
+                                <span class="label label-pill label-warning">French</span>
+                            </p>
+                            <!-- Add Skill Input -->
+                            <div class="input-group input-group-sm">
+                                <input  id="newSkill" type="text" class="form-control" placeholder="Add a skill">
+                                <span class="input-group-btn">
+                                    <button id="addSkill" class="btn btn-default" type="button" onclick="javascript: addSkill()">Add</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Requested -->
+                <div class="col-sm-9">
+                    <div class="above-card-header">
+                        <h4 class="pull-left"><i class="ionicons ion-help-circled"></i> Get help with...</h4>
+                        <a class="pull-right" data-toggle="modal" data-target="#getHelpModal"><i class="material-icons">add_circle_outline</i></a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="card">
+                        <ul class="list-group list-group-flush" id="help_needed">
+                            <li class="list-group-item" id="accept_help_list_item">
+                                <div class="pull-left">
+                                    <strong>Python</strong> in the next 2-3 days 
+                                </div>
+                                <div id="accept_help_icon" class="pull-right">
+                                    <a data-toggle="modal" data-target="#acceptHelpModal"><i class="material-icons">mood</i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                            <li class="list-group-item" id="getting_help_list_item">
+                                <div class="pull-left">
+                                    <strong>Moving boxes</strong> in the next week
+                                </div>
+                                <div id="getting_help_icon" class="pull-right">
+                                     <a data-toggle="modal" data-target="#finishModalLeo"><i class="material-icons">timer</i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Past Help Given -->
+                <div class="col-sm-9">
+                    <div class="above-card-header">
+                        <h4><i class="ionicons ion-help-buoy"></i> Past help given...</h4>
+                    </div>
+                    <div class="card">
+                        <!-- <div class="card-block">
+                            <h4 class="card-title"><i class="ionicons ion-help-buoy"></i> Past help given...</h4>
+                            <p class="card-text">Things you've helped others with.</p>
+                        </div> -->
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="pull-left">
+                                    You helped<strong> Sid Sivakumar</strong> with <strong>Python</strong> 1 week ago.
+                                </div>
+                                <div class="pull-right">
+                                   + 30 minutes
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="pull-left">
+                                    You helped<strong> Leo Ying</strong> with <strong>Ruby on Rails</strong> 2 weeks ago.
+                                </div>
+                                <div class="pull-right">
+                                   + 30 minutes
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Past Help Received -->
+                <div class="col-sm-9">
+                    <div class="above-card-header">
+                        <h4 class="card-title"><i class="ionicons ion-checkmark-circled"></i> Past help received...</h4>
+                    </div>
+                    <div class="card">
+                        <!-- <div class="card-block">
+                            <h4 class="card-title"><i class="ionicons ion-checkmark-circled"></i> Past help received...</h4>
+                            <p class="card-text">Things you've asked for help with and received help for.</p>
+                        </div> -->
+                        <ul class="list-group list-group-flush" id="help_received">
+                            <li class="list-group-item">
+                                <div class="pull-left">
+                                    <strong>Sid Sivakumar</strong> helped you with <strong>Python</strong> 1 week ago.
+                                </div>
+                                <div class="pull-right">
+                                   - 30 minutes
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="pull-left">
+                                    <strong>Leo Ying</strong> helped you with <strong>Ruby on Rails</strong> 2 weeks ago.
+                                </div>
+                                <div class="pull-right">
+                                   - 30 minutes
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get Help Modal -->
+        <div class="modal fade" id="getHelpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Get help with...</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Skill input -->
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Skill: </span>
+                            <input id="skill" type="text" class="form-control" placeholder="Choose Skill" aria-describedby="basic-addon1">
+                        </div>
+                        <br>
+                        <!-- Description input -->
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Description: </span>
+                            <input id="description" type="text" class="form-control" placeholder="Enter Description" aria-describedby="basic-addon1">
+                        </div>
+                        <br>
+                        <!-- Deadline input -->
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Deadline: </span>
+                            <input id="deadline" type="text" class="form-control" placeholder=" Choose date" aria-describedby="basic-addon1">
+                        </div>
+                        <br>
+                        <!-- Estimation of time needed -->
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Estimate of help needed: </span>
+                            <input id="estimation" type="text" class="form-control" placeholder=" Enter a time" aria-describedby="basic-addon1">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript: addHelpRequest()">Get Help</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accept Help Modal -->
+        <div class="modal fade" id="acceptHelpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Sid Sivakumar wants to help you!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-2">
+                            <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                        </div>
+                        <div class="col-sm-10">
+                            Sid can help you with Python in the next 2-3 days. Send him a text to coordinate getting help (650) 714-9731.
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript: acceptHelp(); addAlert('Text successfully sent to Sid!')">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEO Finish Getting Help Modal -->
+        <div class="modal fade" id="finishModalLeo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Leo is currently helping you.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-2">
+                            <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                        </div>
+                        <div class="col-sm-10">
+                            Leo is currently helping you <strong>move boxes</strong>. Once you have finished getting help from Leo grant him help credits so he can get help from others and be rewarded for helping you.
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-left">
+                            Leo helped me for 1 hour
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: finishHelp('Leo Ying', 'moving boxes', '1 hour'); addAlert('Leo received 1 hour of help credit for helping you!')">Grant and finish getting help</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SID Finish Getting Help Modal -->
+        <div class="modal fade" id="finishModalSid" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Sid is currently helping you.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-2">
+                            <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                        </div>
+                        <div class="col-sm-10">
+                            Sid is currently helping you with <strong>Python</strong>. Once you have finished getting help from Sid grant him help credits so he can get help from others and be rewarded for helping you.
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pull-left">
+                            Sid helped me for 1 hour 30 minutes
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: finishHelp('Sid Sivakumar', 'Python', '1 hour 30 minutes'); addAlert('Sid received 1 hour and 30 minutes of help credit for helping you!')">Grant and finish getting help</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- jQuery first, then Bootstrap JS. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#newSkill').keydown(function(event){    
+                    if(event.keyCode==13){
+                       addSkill();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

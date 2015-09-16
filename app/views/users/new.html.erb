@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <%= stylesheet_link_tag "https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" %>
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"> -->
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Main CSS page -->
+    <%= stylesheet_link_tag "/assets/main.css" %>
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/main.css"> -->
+
+    <script src="/assets/helper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <title>Helper</title>
+  </head>
+  <body style="background-image: none;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-faded">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/assets/logo.png" alt="Helper" style="height:30px;"></a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile.html"><i class="ionicons ion-person"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/feed.html"><i class="ionicons ion-android-favorite-outline"></i> Help Feed</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="ionicons ion-help-buoy"></i> Help Others <span class="label label-pill label-default" style="font-weight: normal;">4</span></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <div class="container">
+
+        <%= flash_messages %>
+
+        <br>
+        <div class="row">
+            <!-- Profile Info -->
+            <div class="col-sm-3">
+                <!-- Quick info -->
+                <div class="card">
+                    <img class="card-img-top" src="/assets/user.png" alt="Profile Picture" style="width:100%;">
+                    <div class="card-block">
+                        <h4 class="card-title">Alice Borie</h4>
+                        <p class="card-text">Senior, Carnegie Mellon University</p>
+                    </div>
+                </div>
+                <!-- Points -->
+                <div class="card">
+                    <div class="card-block">
+                        <h6>Help Credits:</h6>
+                        <div class="pull-left">
+                            2 hours 30 mins
+                        </div>
+                        <div class="pull-right">
+                            <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title">Knows</h6>
+                        <!-- Skills Group -->
+                        <p class="card-text" id="skills_group">
+                            <span class="label label-pill label-primary">Python</span>
+                            <span class="label label-pill label-primary">Ruby</span>
+                            <span class="label label-pill label-primary">Django</span>
+                            <span class="label label-pill label-primary">Ruby on Rails</span>
+                            <span class="label label-pill label-info">Driving</span>
+                            <span class="label label-pill label-warning">French</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Services Requested -->
+            <div class="col-sm-9">
+                <div class="above-card-header">
+                    <h4>Help others with skills you know:</h4>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title pull-left"><strong>Siddarth Sivakumar</strong> needs help with <strong>Python</strong></h6>
+                        <button type="button" class="btn btn-danger pull-right btn-circle" onclick="javascript: removeRequest(this.parentNode.parentNode)">&#10008;</button>
+                        <button type="button" class="btn btn-success pull-right btn-circle" data-toggle="modal" data-target="#helpPythonModal">&#10004;</button> 
+                        <div class="clearfix"></div>
+                        <p class="card-text">I need help with a programming assignment due tomorrow.</p>
+                    </div>
+                </div>   
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title pull-left"><strong>Leo Ying</strong> needs help with <strong>driving</strong></h6>
+                        <button type="button" class="btn btn-danger pull-right btn-circle" onclick="javascript: removeRequest(this.parentNode.parentNode)">&#10008;</button>
+                        <button type="button" class="btn btn-success pull-right btn-circle" data-toggle="modal" data-target="#helpDrivingModal">&#10004;</button> 
+                        <div class="clearfix"></div>
+                        <p class="card-text">I need to go to the grocery store asap (running out of TP)...</p>
+                    </div>
+                </div>  
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title pull-left"><strong>Leo Ying</strong> needs help with <strong>French</strong></h6>
+                        <button type="button" class="btn btn-danger pull-right btn-circle" onclick="javascript: removeRequest(this.parentNode.parentNode)">&#10008;</button>
+                        <button type="button" class="btn btn-success pull-right btn-circle" data-toggle="modal" data-target="#helpFrenchModal">&#10004;</button> 
+                        <div class="clearfix"></div>
+                        <p class="card-text">I need help memorizing verbs for an exam tomorrow.</p>
+                    </div>
+                </div>  
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="card-title pull-left"><strong>Siddarth Sivakumar</strong> needs help with <strong>Django</strong></h6>
+                        <button type="button" class="btn btn-danger pull-right btn-circle" onclick="javascript: removeRequest(this.parentNode.parentNode)">&#10008;</button>
+                        <button type="button" class="btn btn-success pull-right btn-circle" data-toggle="modal" data-target="#helpDjangoModal">&#10004;</button> 
+                        <div class="clearfix"></div>
+                        <p class="card-text">So lost. Please help.</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- Help with python modal -->
+    <div class="modal fade" id="helpPythonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Help Sid with Python!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-2">
+                        <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                    </div>
+                    <div class="col-sm-10">
+                        Send notification to Sid to let him know you can help him with <strong>Python</strong> for 30 minutes.
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <%= button_to 'Accept!', users_test_path, method: :get, class: 'btn btn-primary pull-right' %>
+                    <!-- <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: addAlert('Sid notified!')">Notify</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help with driving modal -->
+    <div class="modal fade" id="helpDrivingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Help Leo with driving!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-2">
+                        <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                    </div>
+                    <div class="col-sm-10">
+                        Send notification to Leo to let him know you can help him with <strong>driving</strong> for 1 hour.
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <%= button_to 'Accept!', users_test_path, method: :get, class: 'btn btn-primary pull-right' %>
+                    <!-- <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: addAlert('Leo notified!')">Notify</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help with French modal -->
+    <div class="modal fade" id="helpFrenchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Help Leo with French!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-2">
+                        <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                    </div>
+                    <div class="col-sm-10">
+                        Send notification to Leo to let him know you can help him with <strong>French</strong> for 2 hours.
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <%= button_to 'Accept!', users_test_path, method: :get, class: 'btn btn-primary pull-right' %>
+                    <!-- <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: addAlert('Leo notified!')">Notify</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help with django modal -->
+    <div class="modal fade" id="helpDjangoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Help Sid with Django!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-2">
+                        <img src="/assets/user.png" alt="Profile Picture" style="width:60px;">
+                    </div>
+                    <div class="col-sm-10">
+                        Send notification to Sid to let him know you can help him with <strong>Django</strong> for 30 minutes.
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <%= button_to 'Accept!', users_test_path, method: :get, class: 'btn btn-primary pull-right' %>
+                    <!-- <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="javascript: addAlert('Sid notified!')">Notify</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%#= button_to 'Test', users_test_path, method: :get %>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  </body>
+</html>
+

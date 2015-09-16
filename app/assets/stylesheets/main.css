@@ -1,0 +1,37 @@
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin-right: 3px;
+  margin-left: 3px;
+} 
+
+.card {
+	margin-bottom: 30px;
+}
+
+.above-card-header {
+	margin-left: 10px;
+	margin-right: 21px;
+	margin-bottom: 0rem;
+}
+
+.above-card-header > .btn-circle {
+	width: 25px;
+  	height: 25px;
+
+}
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   padding-top: 0;
+}
+
+.card {
+	background-color: white;
+}
